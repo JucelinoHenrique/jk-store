@@ -1,0 +1,12 @@
+.container-login{
+    height: 100vh;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.erroMessage p{
+   color: white;
+}
