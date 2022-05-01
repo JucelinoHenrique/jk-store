@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Users from "../../mock/Users.json";
+import Users from "../mock/Users.json";
 const initialState = {
   user: "",
   password: "",
