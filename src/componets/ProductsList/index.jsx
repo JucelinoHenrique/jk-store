@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../store/productsSlice";
+import { getProducts } from "../../store/products";
 import { ContainerFull } from "../../styles";
 import TabMenu from "../TabMenu";
 

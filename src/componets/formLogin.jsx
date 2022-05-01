@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../css/formLogin.css";
-import { login, setPassword, setUser } from "../store/loginSlice";
+import { login, setPassword, setUser } from "../store/login";
 
 const FormLogin = () => {
   const { user, password, errorMessage, isAuthenticated } = useSelector(

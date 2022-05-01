@@ -1,16 +1,21 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../store/productsSlice";
+import { getProducts } from "../store/products";
 import "../css/products.css";
+import { addProduct } from "../store/shoppingCart";
 
 export const Products = () => {
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
 
   const { products } = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispath(getProducts());
+    dispatch(getProducts());
   }, []);
+
+  const addProd = (product) => {
+    dispatch(addProduct(product));
+  };
 
   return (
     <div className="container-products">
@@ -27,7 +32,12 @@ export const Products = () => {
                 <h5 className="price">R$-{Number(products.price)}</h5>
               </div>
               <div className="container-buttonCart">
-                <button className="button-addCart">Adicionar</button>
+                <button
+                  className="button-addCart"
+                  onClick={() => addProd(products)}
+                >
+                  Adicionar
+                </button>
               </div>
             </div>
           );
