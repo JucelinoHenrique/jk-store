@@ -1,42 +1,37 @@
 import React from "react";
-import {Routes,Route} from "react-router-dom"
-import { useSelector } from 'react-redux';
+import { Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Home from "./pages/home";
 import LoginJk from "./pages/login";
-import Clothes from "./pages/clothes";
-import OthersProducts from "./pages/othersProducts";
 import Header from "./componets/header";
+import Products from "./pages/Products";
 
-const PriveteRoutes = ()=>{
-    return(
-       <Routes>
-           <Route path="/" element={<Home/>}/>
-           <Route path="clothes" element={<Clothes/>}/>
-           <Route path="outros" element={<OthersProducts/>}/>
-       </Routes>
-    )
-}
+const PriveteRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/products" element={<Products />} />
+    </Routes>
+  );
+};
 
+const RoutesApp = () => {
+  const { isAuthenticated } = useSelector((state) => state.login);
 
-const RoutesApp = ()=>{
-   const {isAuthenticated} = useSelector((state)=> state.login)  
-   console.log(isAuthenticated)
-   if(isAuthenticated){
-
-       return (
-        <div>
-       <Header/>
-       <PriveteRoutes/>
-       </div>
-       )     
-   }
-    return(
-       <Routes>
-         <Route path="/" element={<LoginJk/>}/>
-       </Routes>
-   )
-
-}
-
+  if (isAuthenticated) {
+    return (
+      <div>
+        <Header />
+        <PriveteRoutes />
+      </div>
+    );
+  }
+  return (
+    <Routes>
+      <Route path="/" element={<LoginJk />} />
+      <Route path="/products" element={<Products />} />
+    </Routes>
+  );
+};
 
 export default RoutesApp;

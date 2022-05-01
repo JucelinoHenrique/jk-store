@@ -1,20 +1,18 @@
-[   
-{
-  "user":"JK Filho",
-  "email":"Jkfilho14@gmail.com",
-  "password":"filho12345"
-},
-{
-    "user":"JK Pai",
-    "email":"Jkpai12@gmail.com",
-    "password":"pai12345"
+[
+  {
+    "user": "JK Filho",
+    "email": "Jkfilho14@gmail.com",
+    "password": "filho12345"
+  },
+  {
+    "user": "JK Pai",
+    "email": "Jkpai12@gmail.com",
+    "password": "pai12345"
   },
 
   {
-    "user":"Oscar Dev",
-    "email":"Oscardev17@gmail.com",
-    "password":"pai12345"
+    "user": "Oscar Dev",
+    "email": "oscar@gmail.com",
+    "password": "1234"
   }
-
-
 ]
