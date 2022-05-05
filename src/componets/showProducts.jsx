@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../store/products";
 import "../css/products.css";
 import { addProduct } from "../store/shoppingCart";
+import {ButtonAdd,ContainerInfo,ContainerCard,ContainerProducts,ContainerCards,ContainerImageCard} from "../pages/style/styles";
 
 export const Products = () => {
   const dispatch = useDispatch();
@@ -11,38 +12,34 @@ export const Products = () => {
 
   useEffect(() => {
     dispatch(getProducts());
-  }, []);
+  }, [dispatch]);
 
   const addProd = (product) => {
     dispatch(addProduct(product));
   };
 
   return (
-    <div className="container-products">
+    <ContainerProducts >
       <h1> Todos os produtos</h1>
-      <div className="container-cards">
+      <ContainerCards>
         {products.map((products) => {
           return (
-            <div className="container-card" key={products.id}>
-              <div className="container-imageCard">
-                <img src={products.image} />
-              </div>
-              <div className="container-info">
-                <h4 className="name-produtcs">{products.title}</h4>
-                <h5 className="price">R$-{Number(products.price)}</h5>
-              </div>
-              <div className="container-buttonCart">
-                <button
-                  className="button-addCart"
-                  onClick={() => addProd(products)}
-                >
+            <ContainerCard key={products.id}>
+              <ContainerImageCard>
+                <img src={products.image}  alt={products.title}/>
+              </ContainerImageCard>
+              <ContainerInfo>
+                <h4>{products.title}</h4>
+                <h5>R$ {Number(products.price)}</h5>
+              </ContainerInfo>
+                <ButtonAdd onClick={() => addProd(products)}>
                   Adicionar
-                </button>
-              </div>
-            </div>
+                </ButtonAdd>
+  
+            </ContainerCard>
           );
         })}
-      </div>
-    </div>
+      </ContainerCards>
+    </ContainerProducts>
   );
 };

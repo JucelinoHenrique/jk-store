@@ -5,12 +5,23 @@ export const ContainerFull = styled.div`
   flex-direction: column;
   width: 100vw;
   height: 100vh;  
+  gap: 10px;
 `;
 
 export const ContainerFlex = styled.div`
   display: flex;
   flex-direction: column;  
+  gap: 10px;
 `;
+
+export const ContainerFlexRow = styled.div`
+display: flex;
+flex-direction: row;
+background-color: aliceblue;
+gap: 20px;
+`
+
+
 
 export const Button = styled.button`
   color: white;

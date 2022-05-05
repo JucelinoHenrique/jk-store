@@ -6,3 +6,16 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
 `;
+
+export const ButtonAdd = styled.button`
+
+ display: flex;
+ height: 30px;
+ width: 100px;
+ background-image: linear-gradient(120deg, #ae8500 0%, #fe3d08 100%);
+
+
+
+
+
+`
