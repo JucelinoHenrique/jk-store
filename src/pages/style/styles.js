@@ -72,6 +72,16 @@ export const ButtonRemove = styled.button`
 `
 
 
+export const Wrapper = styled.div`
+*{
+  padding:0;
+  margin: 0;
+}
+display: flex;
+flex-direction: column;
+gap: 20px;
+`
+
 export const ContainerProducts = styled.div`
     display: flex;
     flex-direction: column;
@@ -99,9 +109,9 @@ export const ContainerInfo = styled.div`
 display: flex;
 flex-direction: column;
 text-align: justify;
-justify-content: center;
-width: 300px;
-height: 150px;
+justify-content: space-around;
+gap: 10px;
+align-items: flex-start;
 
 p{
   padding: 0px;
@@ -125,7 +135,7 @@ export const ButtonAdd = styled.button`
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    width: 100px;
+    min-width: 100px;
     height: 35px;
     color: white;
     transition: ease-in 0.1s;
@@ -140,12 +150,13 @@ export const MicroCard = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: center;
-height: 200px ;
-gap: 20px;
+justify-content: space-around;
+min-height: 200px;
 margin-top: 10px;
-border: 1px solid black;
-width: 600px;
+min-width: 400px;
+border-radius: 5px;
+border: 1px solid #DDDDDD;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
 p{
@@ -157,6 +168,17 @@ img{
   width: 150px;
 }
 
+
+
+`
+
+export const ContainerTotal = styled.div`
+display: flex;
+flex-direction: column;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+min-width: 200px;
+height: 200px;
+letter-spacing: 1px;
 
 
 `

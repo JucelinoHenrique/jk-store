@@ -7,11 +7,6 @@ const initialState = {
 }
 
 
-
-
-
-
-
 export const shoppingCart = createSlice({
   name: "shoppingCart",
   initialState,
@@ -24,8 +19,7 @@ export const shoppingCart = createSlice({
       }, 0);
     },
     removeProduct: (state, action) => {
-      state.products.splice(action.pay, 1); 
-      console.log("esse é o action",action.payload)  
+      state.products.splice(action.payload, 1); 
       state.totalQuantity -= 1;
       state.totalPrice = state.products.reduce((acc, product) => {
         return acc + product.price;

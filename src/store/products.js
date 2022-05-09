@@ -16,14 +16,14 @@ const productsSlice = createSlice({
     status: null,
   },
   extraReducers: {
-    [getProducts.pending]: (state, action) => {
+    [getProducts.pending]: (state) => {
       state.status = "loading";
     },
     [getProducts.fulfilled]: (state, action) => {
       state.status = "success";
       state.products = action.payload;
     },
-    [getProducts.rejected]: (state, action) => {
+    [getProducts.rejected]: (state) => {
       state.status = "failed";
     },
   },

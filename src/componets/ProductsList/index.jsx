@@ -5,13 +5,14 @@ import { ContainerFull } from "../../styles";
 import {ButtonAdd,ContainerInfo,ContainerCard,ContainerImageCard, ContainerCards} from "../../pages/style/styles";
 import { addProduct } from "../../store/shoppingCart";
 import TabMenu from "../TabMenu";
+import { Loading } from "./styles";
 
 export default function ProductsList() {
   const dispatch = useDispatch();
   const [categories, setCategories] = useState([]);
   const [categoryFilter, setCategoryFilter] = useState(null);
   const { products: product, status } = useSelector((state) => state.products);
-
+  
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
@@ -38,7 +39,7 @@ export default function ProductsList() {
   if (isLoading) {
     return (
       <ContainerFull>
-        <div>Carregando...</div>;
+        <Loading style={{position:"absolute",top:"50%",left:"50%"}}/>
       </ContainerFull>
     );
   }
@@ -46,7 +47,6 @@ export default function ProductsList() {
   const addProd = (product) => {
     dispatch(addProduct(product));
   };
-
 
 
 
